@@ -1,8 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Hablamos;
-using Hablamos.Utils;
 
-Console.WriteLine("Welcome to Hablmos, press q to quit anytime.");
+Console.WriteLine("Welcome to Hablamos, press q to quit anytime.");
 
 QuestionsFactory factory = new QuestionsFactory();
 var question = factory.GetNextQuestion();
