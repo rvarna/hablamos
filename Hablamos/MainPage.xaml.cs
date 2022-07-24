@@ -70,7 +70,7 @@
             }
 
             Next.IsEnabled = true;
-            Next.BackgroundColor = Colors.LightGreen;
+            Next.BackgroundColor = Colors.LightSkyBlue;
         }
 
         private void OnNext(object sender, EventArgs e)
