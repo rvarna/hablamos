@@ -1,4 +1,4 @@
-﻿namespace Maui
+﻿namespace Hablamos
 {
     public static class MauiProgram
     {

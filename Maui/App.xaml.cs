@@ -1,4 +1,4 @@
-﻿namespace Maui
+﻿namespace Hablamos
 {
     public partial class App : Application
     {

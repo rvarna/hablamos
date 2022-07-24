@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace Maui
+namespace Hablamos
 {
     [Register("AppDelegate")]
     public class AppDelegate : MauiUIApplicationDelegate

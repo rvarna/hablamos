@@ -1,7 +1,4 @@
-﻿using Hablamos;
-using System.Runtime.CompilerServices;
-
-namespace Maui
+﻿namespace Hablamos
 {
     public partial class MainPage : ContentPage
     {
@@ -22,13 +19,15 @@ namespace Maui
             InitializeComponent();
             _questionsFactory = new QuestionsFactory();
             _originalBackground = Option1.BackgroundColor;
-            RefreshOptions();
+            RefreshOptions();           
            
         }
 
         private void RefreshOptions()
         {
             Option1.BackgroundColor = Option2.BackgroundColor = Option3.BackgroundColor = Option4.BackgroundColor = _originalBackground;
+            Next.IsEnabled = false;
+            Next.BackgroundColor = Colors.Grey;
             _currentQuestion = _questionsFactory.GetNextQuestion();
             var options = _currentQuestion.GetOptions();
             Verb.Text = _currentQuestion.Verb;
@@ -60,15 +59,6 @@ namespace Maui
         {            
             Button clickedButton = sender as Button;
             _currentSelectedOption = clickedButton;
-            
-        }
-
-        private void OnConfirm(object sender, EventArgs e)
-        {
-            Option1.Clicked -= OnOptionClicked;
-            Option2.Clicked -= OnOptionClicked;
-            Option3.Clicked -= OnOptionClicked;
-            Option4.Clicked -= OnOptionClicked;
             if (_currentSelectedOption.Text.Equals(_currentQuestion.Translation))
             {
                 _currentSelectedOption.BackgroundColor = Colors.Green;
@@ -79,22 +69,12 @@ namespace Maui
                 _answerButton.BackgroundColor = Colors.LightGreen;
             }
 
-            Confirm.Text = "Next";
-            Confirm.Clicked -= OnConfirm;
-            Confirm.Clicked += OnNext;
+            Next.IsEnabled = true;
+            Next.BackgroundColor = Colors.LightGreen;
         }
 
         private void OnNext(object sender, EventArgs e)
         {
-            Confirm.Text = "Confirm";
-            Confirm.Clicked -= OnNext;
-            Confirm.Clicked += OnConfirm;
-
-            Option1.Clicked += OnOptionClicked;
-            Option2.Clicked += OnOptionClicked;
-            Option3.Clicked += OnOptionClicked;
-            Option4.Clicked += OnOptionClicked;
-
             RefreshOptions();
         }
     }

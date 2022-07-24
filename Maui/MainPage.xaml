@@ -3,56 +3,60 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Maui.MainPage">
 			 
-    <ScrollView>
+    
         <VerticalStackLayout 
             Spacing="25" 
             Padding="30,0" 
-            VerticalOptions="Center">
+            VerticalOptions="Center"
+            x:Name="VerticalStackLayout">
              
             <Label
                 x:Name="Verb"
                 Text=""
-                FontSize="32"
+                FontSize="40"
                 HorizontalOptions="Center" />
-            
+        
             <Button
                 x:Name="Option1"
                 Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+                SemanticProperties.HeadingLevel="Level1" WidthRequest="500"
+                FontSize="32" 
                 Clicked="OnOptionClicked"
                 HorizontalOptions="Center" />
-            <Button
+            <Button 
                 x:Name="Option2"
                 Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.HeadingLevel="Level1" WidthRequest="500"
                 FontSize="32"
                 Clicked="OnOptionClicked"
                 HorizontalOptions="Center" />
-            <Button
+            <Button 
                 x:Name="Option3"
                 Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.HeadingLevel="Level1" WidthRequest="500"
                 FontSize="32"
                 Clicked="OnOptionClicked"
                 HorizontalOptions="Center" />
-            <Button
+            <Button 
                 x:Name="Option4"
                 Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.HeadingLevel="Level1"  WidthRequest="500"
                 FontSize="32"
                 Clicked="OnOptionClicked"
                 HorizontalOptions="Center" />
 
-            <Button
-                x:Name="Confirm"
-                Text="Confirm"
+            <Button HorizontalOptions="Fill"
+                x:Name="Next"
+                IsEnabled="False"
+                Text="Next"
                 SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                Clicked="OnConfirm"
-                HorizontalOptions="Center" />
+                FontSize="40" 
+                Clicked="OnNext"
+                BackgroundColor="Grey"
+                />          
+            
 
         </VerticalStackLayout>
-    </ScrollView>
+    
  
 </ContentPage>
