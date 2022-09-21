@@ -53,9 +53,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Include="lang\es\Verbs.csv">
+	  <MauiAsset Include="lang\es\Verbs.csv">
 	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  </Content>
+	  </MauiAsset>
 	</ItemGroup>
 
 </Project>

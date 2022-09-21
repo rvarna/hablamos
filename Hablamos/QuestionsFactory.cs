@@ -1,24 +1,14 @@
-﻿using Hablamos.Utils;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Hablamos
+﻿namespace Hablamos
 {
+    using Hablamos.Utils;
+
     internal class QuestionsFactory
     {
         private Dictionary<string, List<string>> _verbsBank = new Dictionary<string, List<string>>();
 
-        private string _previousVerb;
-
         public QuestionsFactory()
         {
-            string mainDir = FileSystem.Current.AppDataDirectory;
-            var directory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-           var lines = File.ReadAllLines(Path.Combine(directory, @"lang\es\Verbs.csv"));
+            var lines = ReadAllLines(@"lang\es\Verbs.csv");
             foreach (var line in lines)
             {
                 var parts = line.Split(',');
@@ -34,6 +24,20 @@ namespace Hablamos
                     _verbsBank[verb] = new List<string> { translation };
                 }
             }
+        }
+
+        public string[] ReadAllLines(string filePath)
+        {
+            using Stream fileStream =  FileSystem.Current.OpenAppPackageFileAsync(filePath).GetAwaiter().GetResult();
+            using StreamReader reader = new StreamReader(fileStream);
+            List<string> lines = new List<string>();
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                lines.Add(line);
+            }
+
+            return lines.ToArray(); ;
         }
 
         public Question GetNextQuestion()
