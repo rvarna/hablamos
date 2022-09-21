@@ -5,7 +5,7 @@
 
     <VerticalStackLayout 
             Spacing="25" 
-            Padding="30,0" 
+            Padding="3,3" 
             VerticalOptions="Center"
             x:Name="VerticalStackLayout">
 
@@ -18,37 +18,36 @@
         <Button
                 x:Name="Option1"
                 Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1" WidthRequest="500"
+                SemanticProperties.HeadingLevel="Level1" LineBreakMode="WordWrap" WidthRequest="300"
                 FontSize="32" 
                 Clicked="OnOptionClicked"
-                HorizontalOptions="Center" />
+                 />
         <Button 
                 x:Name="Option2"
                 Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1" WidthRequest="500"
+                SemanticProperties.HeadingLevel="Level1" LineBreakMode="WordWrap" WidthRequest="300"
                 FontSize="32"
                 Clicked="OnOptionClicked"
-                HorizontalOptions="Center" />
+                 />
         <Button 
                 x:Name="Option3"
                 Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1" WidthRequest="500"
+                SemanticProperties.HeadingLevel="Level1" LineBreakMode="WordWrap" WidthRequest="300"
                 FontSize="32"
                 Clicked="OnOptionClicked"
-                HorizontalOptions="Center" />
+                />
         <Button 
                 x:Name="Option4"
                 Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"  WidthRequest="500"
+                SemanticProperties.HeadingLevel="Level1" LineBreakMode="WordWrap" WidthRequest="300"
                 FontSize="32"
                 Clicked="OnOptionClicked"
-                HorizontalOptions="Center" />
+                 />
 
-        <Button HorizontalOptions="Fill"
-                x:Name="Next"
+        <Button x:Name="Next"
                 IsEnabled="False"
                 Text="Next"
-                SemanticProperties.HeadingLevel="Level1"
+                SemanticProperties.HeadingLevel="Level1" LineBreakMode="WordWrap"
                 FontSize="40" 
                 Clicked="OnNext"
                 BackgroundColor="Grey"  />
